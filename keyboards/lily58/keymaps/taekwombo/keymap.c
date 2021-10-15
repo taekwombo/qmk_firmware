@@ -15,9 +15,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   \  |   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   ;  |  '   |
  * |------+------+------+------+------+------|   [   |    |    ]  |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RShift|
+ * |LSHIFT|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |RSHIFT|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   | LAlt | LGUI | LCTL | /Space  /       \Enter \  | RCTL |LOWER | RAlt |
+ *                   | LALT | LGUI | LCTL | /SPACE  /       \ENTER \  | RCTL |LOWER | RALT |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
@@ -36,21 +36,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      | VOLU | BRIU |      |                    | PSCR | INS  | HOME | PGUP | PAUS | SLCK |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      | VOLD | BRID |      |-------.    ,-------| BSPC | DEL  | END  | PGDN | APP  |      |
+ * |      |      |      | VOLD | BRID |      |-------.    ,-------| BSPC | DEL  | END  | PGDN | APP  | CAPS |
  * |------+------+------+------+------+------|  ESC  |    |       |------+------+------+------+------+------|
  * |      |      |      | Mute |      |      |-------|    |-------| LEFT | DOWN |  UP  | RGHT |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *                   |      |      |      | /       /       \      \  |      |      |      |
+ *                   |RESET |      |      | /       /       \      \  |      |      |      |
  *                   |      |      |      |/       /         \      \ |      |      |      |
  *                   `----------------------------'           '------''--------------------'
  */
 
 [_LOWER] = LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   \
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLU, KC_BRIU, KC_TRNS,                   KC_PSCR, KC_INS,  KC_HOME, KC_PGUP, KC_PAUS, KC_SLCK,  \
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD, KC_BRID, KC_TRNS,                   KC_BSPC, KC_DEL,  KC_END,  KC_PGDN, KC_APP,  KC_TRNS,  \
-  KC_TRNS, KC_TRNS, KC_TRNS, KC_MUTE, KC_TRNS, KC_TRNS, KC_ESC,  KC_TRNS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_TRNS, KC_TRNS,  \
-                             KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS \
+  KC_NO,   KC_NO,   KC_NO,   KC_VOLU, KC_BRIU, KC_NO,                     KC_PSCR, KC_INS,  KC_HOME, KC_PGUP, KC_PAUS, KC_SLCK,  \
+  KC_NO,   KC_NO,   KC_NO,   KC_VOLD, KC_BRID, KC_NO,                     KC_BSPC, KC_DEL,  KC_END,  KC_PGDN, KC_APP,  KC_CAPS,  \
+  KC_NO,   KC_NO,   KC_NO,   KC_MUTE, KC_NO,   KC_NO, KC_ESC,    KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_NO,   KC_NO,    \
+                             RESET,   KC_NO,   KC_NO, KC_NO,     KC_NO,   KC_NO, KC_NO, KC_NO \
 )
 
 };
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 #ifdef OLED_ENABLE
 
 const char *read_layer_state(void);
-void set_keylog(uint16_t keycode, keyrecord_t *record);
+void set_keylog(keyrecord_t *record);
 const char *read_keylog(void);
 
 void oled_task_user(void) {
@@ -71,7 +71,7 @@ void oled_task_user(void) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
-    set_keylog(keycode, record);
+    set_keylog(record);
   }
   return true;
 }
