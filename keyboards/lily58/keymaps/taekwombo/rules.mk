@@ -3,7 +3,7 @@
 #   the appropriate keymap folder that will get included automatically
 #
 BOOTMAGIC_ENABLE = no       # Enable Bootmagic Lite
-MOUSEKEY_ENABLE = yes       # Mouse keys
+MOUSEKEY_ENABLE = no        # Mouse keys
 EXTRAKEY_ENABLE = yes       # Audio control and System control
 CONSOLE_ENABLE = no         # Console for debug
 COMMAND_ENABLE = no         # Commands for debug and configuration
@@ -13,6 +13,11 @@ AUDIO_ENABLE = no           # Audio output
 RGBLIGHT_ENABLE = no        # Enable WS2812 RGB underlight.
 SWAP_HANDS_ENABLE = no      # Enable one-hand typing
 OLED_ENABLE= yes     		# OLED display
+
+MAGIC_ENABLE = no
+GRAVE_ESC_ENABLE = no
+SPACE_CADET_SHIFT = no
+MUSIC_ENABLE = no
 
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    	# Breathing sleep LED during USB suspend
