@@ -40,6 +40,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define NO_ACTION_ONESHOT
 #define LAYER_STATE_8BIT
 
+#define OLED_TIMEOUT 2000
+#define OLED_BRIGHTNESS 16
+
 // Underglow
 /*
 #undef RGBLED_NUM

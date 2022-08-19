@@ -19,6 +19,8 @@ GRAVE_ESC_ENABLE = no
 SPACE_CADET_SHIFT = no
 MUSIC_ENABLE = no
 
+LTO_ENABLE = yes
+
 # Do not enable SLEEP_LED_ENABLE. it uses the same timer as BACKLIGHT_ENABLE
 SLEEP_LED_ENABLE = no    	# Breathing sleep LED during USB suspend
 
