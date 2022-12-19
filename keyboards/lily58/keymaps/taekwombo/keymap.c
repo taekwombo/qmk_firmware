@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* RAISE
  * ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
- * │RESET │      │      │      │      │      │                    │      │      │ WAKE │ SLEP │ PWR  │      │
+ * │RESET │      │      │      │      │      │                    │      │      │      │      │      │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │      │ BRIU │ MNXT │ VOLU │ MPLY │                    │      │      │      │      │      │      │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
@@ -67,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_RAISE] = LAYOUT( \
-  RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                    KC_NO,   KC_NO,   KC_WAKE, KC_SLEP, KC_PWR,  KC_NO,   \
+  RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,                    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   \
   KC_NO,   KC_NO,   KC_BRIU, KC_MNXT, KC_VOLU,   KC_MPLY,                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   \
   KC_NO,   KC_NO,   KC_BRID, KC_MPRV, KC_VOLD,   KC_MSTP,                  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   \
   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MUTE,   KC_MSEL,KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   \
