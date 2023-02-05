@@ -34,22 +34,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬──────┬──────┐
  * │  F1  │  F2  │  F3  │  F4  │  F5  │  F6  │                    │  F7  │  F8  │  F9  │ F10  │ F11  │ F12  │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │      │      │  {   │   }  │      │                    │ ESC  │ HOME │ PGUP │ INS  │ PSCR │ SCRL │
+ * │      │      │      │  {   │   }  │      │                    │      │ HOME │ PGUP │ INS  │ PSCR │ SCRL │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼──────┼──────┤
- * │      │      │      │  [   │   ]  │      ├──────┐      ┌──────┤ BSPC │ END  │ PGDN │ DEL  │ APP  │ CAPS │
+ * │      │      │      │  [   │   ]  │      ├──────┐      ┌──────┤      │ END  │ PGDN │ DEL  │ APP  │ CAPS │
  * ├──────┼──────┼──────┼──────┼──────┼──────┤      │      │      ├──────┼──────┼──────┼──────┼──────┼──────┤
  * │      │      │      │  (   │   )  │      ├──────┘      └──────┤ LEFT │ DOWN │  UP  │ RGHT │ PAUS │      │
  * └──────┴──────┴───┬──┴───┬──┴───┬──┴───┬──┴───┐           ┌────┴─┬────┴─┬────┴─┬────┴─┬────┴──────┴──────┘
- *                   │      │RAISE │      │      │           │      │      │      │      │
+ *                   │      │RAISE │ ESC  │ BSPC │           │      │      │      │      │
  *                   └──────┴──────┴──────┴──────┘           └──────┴──────┴──────┴──────┘
  */
 
 [_LOWER] = LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,     KC_F6,                    KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   \
-  KC_NO,   KC_NO,   KC_NO,   KC_LCBR, KC_RCBR,   KC_NO,                    KC_ESC,  KC_HOME, KC_PGUP, KC_INS,  KC_PSCR, KC_SCRL,  \
-  KC_NO,   KC_NO,   KC_NO,   KC_LBRC, KC_RBRC,   KC_NO,                    KC_BSPC, KC_END,  KC_PGDN, KC_DEL,  KC_APP,  KC_CAPS,  \
+  KC_NO,   KC_NO,   KC_NO,   KC_LCBR, KC_RCBR,   KC_NO,                    KC_NO,   KC_HOME, KC_PGUP, KC_INS,  KC_PSCR, KC_SCRL,  \
+  KC_NO,   KC_NO,   KC_NO,   KC_LBRC, KC_RBRC,   KC_NO,                    KC_NO,   KC_END,  KC_PGDN, KC_DEL,  KC_APP,  KC_CAPS,  \
   KC_NO,   KC_NO,   KC_NO,   KC_LPRN, KC_RPRN,   KC_NO,  KC_NO,   KC_NO,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_PAUS, KC_NO,    \
-                             KC_NO,   MO(_RAISE),KC_NO,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO                                \
+                             KC_NO,   MO(_RAISE),KC_ESC, KC_BSPC, KC_NO,   KC_NO,   KC_NO,   KC_NO                                \
 ),
 
 /* RAISE
